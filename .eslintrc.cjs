@@ -12,6 +12,8 @@ module.exports = {
   settings: { react: { version: "detect" } },
   plugins: ["react-refresh"],
   rules: {
+    // This line turns off prop-types checks completely! ✅
+    "react/prop-types": "off",
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
