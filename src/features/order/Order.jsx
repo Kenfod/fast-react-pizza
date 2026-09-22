@@ -1,5 +1,6 @@
 // Test ID: IIDSAT
 import { useFetcher, useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
 
 import OrderItem from "./OrderItem";
 
@@ -9,7 +10,7 @@ import {
   formatCurrency,
   formatDate,
 } from "../../utils/helpers";
-import { useEffect } from "react";
+import UpdateOrder from "./UpdateOrder";
 
 function Order() {
   const order = useLoaderData();
@@ -96,6 +97,8 @@ function Order() {
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
+
+      {!priority && <UpdateOrder order={order} />}
     </div>
   );
 }
