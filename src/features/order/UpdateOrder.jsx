@@ -2,7 +2,7 @@ import { useFetcher } from "react-router-dom";
 import Button from "../../ui/Button";
 import { updateOrder } from "../../services/apiRestaurant";
 
-function UpdateOrder({ order }) {
+function UpdateOrder() {
   const fetcher = useFetcher();
 
   return (
@@ -14,7 +14,8 @@ function UpdateOrder({ order }) {
 
 export default UpdateOrder;
 
-export async function action({ request, params }) {
+// eslint-disable-next-line react-refresh/only-export-components
+export async function action({ params }) {
   const data = { priority: true };
   await updateOrder(params.orderId, data);
   return null;
